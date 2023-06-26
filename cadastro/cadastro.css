@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(135, 176, 145);
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font: 300;
+    color: (23, 20, 48);
+
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    color: (23, 20, 48);
+}
+
+button {
+    border-radius: 20px;
+    width: 150px;
+    height: 25px;
+    margin-left: 10px;
+    transition: 1s;
+
+background-color: rgb(224, 224, 182);
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.input {
+    margin-left: 800px;
+}
+
