@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Calculadora de Combustível</h1>
+
+<script>
+
+    function mostra (frase){
+
+        document.write (frase);
+    }
+
+    function CalculaKM (litros, mediaPorLitro, kmAtual){
+
+        return litros*mediaPorLitro + kmAtual;
+
+    }
+
+    var litrosInformado = parseFloat (prompt ("Abastecimento de quantos LITROS?"));
+
+        while (isNaN(litrosInformado)){
+
+            alert ("Você precisa informar corretamente a quantidade de LITROS abastecida");    
+
+            litrosInformado = parseFloat (prompt ("Abastecimento de quantos LITROS?"));
+        }
+
+    var mediaPorLitroInformada = parseFloat(prompt ("Em média, quantos Km o veículo roda com UM litro de combusível?"))
+
+        while (isNaN(mediaPorLitroInformada)){
+
+            alert ("Você precisa informar corretamente quantos Km o veículo roda com UM litro de combusível");
+
+            mediaPorLitroInformada = parseFloat(prompt ("Em média, quantos Km o veículo roda com UM litro de combusível?"));    
+
+        }
+
+    var kmAtualInformada = parseFloat(prompt ("Qual a KM Atual / números do odômetro ?"))    
+
+        while (isNaN(kmAtualInformada)){
+            alert ("Você precisa informar corretamente qual a KM Atual / números do odômetro")
+
+            kmAtualInformada = parseFloat (prompt("Qual a KM Atual / números do odômetro ?"))    
+
+        }
+
+    var projecaoOdometro = CalculaKM (litrosInformado, mediaPorLitroInformada, kmAtualInformada);        
+
+
+    var projecao = litrosInformado * mediaPorLitroInformada
+
+
+    mostra ("Se em média com um 1 litro ele trafega  <strong> <big>"+ mediaPorLitroInformada +"</strong></big> Km." + "<br>Projeta-se que ele possa rodar mais "+projecao+ "Km ou até <strong> <big>"  +projecaoOdometro + "</strong></big> da Km informada no odômetro");
+
+    alert ("Com a quantidade abastecida projeta-se rodar "+projecao + " km" )
+
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    big {
+        font-size: 1.2em;
+    }
+
+    script {
+        font-size: 16px;
+        color: #444;
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    script p {
+        margin: 0;
+    }
+
+    script a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    script a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+   
+</body>
+</html>

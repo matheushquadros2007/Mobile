@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo em JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body onload="sortear()">
+    <div class="container">
+        <h1>Tente adivinhar meu número</h1>
+        <button onclick="jogar()" id="botao">Tentar adivinhar</button>
+        <section id="result">
+            <p>Já pensei em um valor entre 1 e 100...</p>
+        </section>
+    </div>
+
+    <script>
+        let res = document.querySelector('section#result');
+        let computador = 0;
+        let jogador = 0;
+
+        function sortear() {
+            let min = 1;
+            let max = 100;
+            let dif = max - min;
+            let aleatorio = Math.random();
+            computador = min + Math.trunc(dif * aleatorio);
+        }
+
+        function jogar() {
+            jogador = Number(window.prompt('Qual é o seu palpite?'));
+            if (jogador < computador) {
+                res.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MAIOR</strong>!</p>`;
+            } else if (jogador > computador) {
+                res.innerHTML += `<p>Você falou ${jogador}. Meu número é <strong>MENOR</strong>!</p>`;
+            } else if (jogador === computador) {
+                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${computador}!</p>`;
+                document.getElementById('botao').style.visibility = 'hidden';
+            }
+        }
+    </script>
+</body>
+</html>
